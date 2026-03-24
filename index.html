@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 深度测评系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f8 100%);
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .api-section {
+            background: linear-gradient(135deg, #1e40af 0%, #4f46e5 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+
+        .api-section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .api-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .api-field label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .api-field input {
+            padding: 10px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+            color: #1f2937;
+        }
+
+        .api-field input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .progress-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
+            transition: width 0.3s ease;
+            border-radius: 6px;
+        }
+
+        main {
+            margin-bottom: 100px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .dimension-badge {
+            background: #e0e7ff;
+            color: #1e40af;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .original-text {
+            color: #6b7280;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .score-section {
+            margin-bottom: 30px;
+        }
+
+        .score-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .score-buttons {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .score-btn {
+            padding: 12px 8px;
+            border: 2px solid #e5e7eb;
+            background: #f9fafb;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .score-btn:hover {
+            border-color: #3b82f6;
+            background: #f0f4f8;
+        }
+
+        .score-btn.selected {
+            background: #1e40af;
+            color: white;
+            border-color: #1e40af;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .score-value {
+            font-size: 16px;
+            display: block;
+        }
+
+        .score-label-text {
+            font-size: 10px;
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        .textarea-section {
+            margin-bottom: 30px;
+        }
+
+        .textarea-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .textarea-section textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .textarea-section textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .char-count {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons button {
+            flex: 1;
+        }
+
+        .quick-nav {
+            margin-bottom: 30px;
+        }
+
+        .quick-nav-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .quick-nav-grid {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        }
+
+        .quick-nav-btn {
+            aspect-ratio: 1;
+            border: 2px solid #e5e7eb;
+            background: #f9fafb;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .quick-nav-btn:hover {
+            border-color: #3b82f6;
+            background: #f0f4f8;
+        }
+
+        .quick-nav-btn.answered {
+            background: #dcfce7;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        .quick-nav-btn.current {
+            background: #1e40af;
+            color: white;
+            border-color: #1e40af;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .result-section {
+            display: none;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .result-subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .dimension-scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .score-card {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f8 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e7ff;
+            text-align: center;
+        }
+
+        .score-card-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .score-card-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+
+        .score-card-hint {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        .analysis-content {
+            margin-top: 30px;
+        }
+
+        .analysis-section {
+            margin-bottom: 25px;
+        }
+
+        .analysis-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+
+        .analysis-text {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .analysis-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .analysis-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .analysis-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .dimension-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .dimension-item {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .dimension-item-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+
+        .dimension-item-text {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box h3 {
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #d1d5db;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 15px 0;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+        }
+
+        .footer-content {
+            display: flex;
+            gap: 12px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content button {
+            flex: 1;
+            padding: 12px 16px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .api-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .score-buttons {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .score-btn {
+                padding: 10px 6px;
+                font-size: 11px;
+            }
+
+            .footer-content {
+                flex-wrap: wrap;
+            }
+
+            .footer-content button {
+                flex: 1 1 calc(50% - 6px);
+                min-width: 120px;
+            }
+
+            .question-text {
+                font-size: 16px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MBTI 深度测评系统</h1>
+            <p>93 题开放式论述版 | 深入了解你的性格特征</p>
+        </div>
+    </header>
+
+    <section class="api-section">
+        <div class="container">
+            <h2>⚙️ API 配置</h2>
+            <div class="api-grid">
+                <div class="api-field">
+                    <label for="apiKey">API 密钥</label>
+                    <input type="password" id="apiKey" placeholder="输入你的 DeepSeek API Key">
+                </div>
+                <div class="api-field">
+                    <label for="apiUrl">API 地址</label>
+                    <input type="text" id="apiUrl" value="https://api.deepseek.com" placeholder="https://api.deepseek.com">
+                </div>
+                <div class="api-field">
+                    <label for="modelName">模型名称</label>
+                    <input type="text" id="modelName" value="deepseek-chat" placeholder="deepseek-chat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>答题进度</span>
+                <span id="progressText">0/93 (0%)</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div id="questionSection" class="card">
+            <div class="question-header">
+                <span class="dimension-badge" id="dimensionBadge">EI</span>
+                <span class="question-number" id="questionNumber">1/93</span>
+            </div>
+            <div class="question-text" id="questionText">加载中...</div>
+            <div class="original-text" id="originalText"></div>
+        </div>
+
+        <div class="card">
+            <div class="score-section">
+                <label class="score-label">你的评分</label>
+                <div class="score-buttons" id="scoreButtons"></div>
+            </div>
+
+            <div class="textarea-section">
+                <label for="answerText">详细说明（可选）</label>
+                <textarea id="answerText" placeholder="请详细描述你的想法、经历或理由..."></textarea>
+                <div class="char-count"><span id="charCount">0</span> 字</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn-secondary" id="prevBtn" onclick="previousQuestion()">← 上一题</button>
+                <button class="btn-primary" id="nextBtn" onclick="nextQuestion()">下一题 →</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="quick-nav">
+                <div class="quick-nav-title">快速导航</div>
+                <div class="quick-nav-grid" id="quickNavGrid"></div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card result-section">
+            <div class="result-title">MBTI 分析报告</div>
+            <div class="result-subtitle">基于你的 93 道题目答案的深度分析</div>
+            <div id="resultContent"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <button class="btn-secondary" onclick="saveProgress()">💾 保存进度</button>
+            <button class="btn-primary" id="analyzeBtn" onclick="analyzeAnswers()">🧠 分析结果</button>
+            <button class="btn-danger" onclick="clearAll()">🗑️ 重置</button>
+        </div>
+    </footer>
+
+    <script>
+        const DIMENSION_NAMES = {
+            EI: '外向/内向',
+            SN: '实感/直觉',
+            TF: '思考/情感',
+            JP: '判断/感知'
+        };
+
+        const SCORE_LABELS = [
+            { value: -3, label: '强烈否' },
+            { value: -2, label: '否' },
+            { value: -1, label: '倾向否' },
+            { value: 0, label: '中立' },
+            { value: 1, label: '倾向是' },
+            { value: 2, label: '是' },
+            { value: 3, label: '强烈是' }
+        ];
+
+        let questions = [];
+        let answers = new Map();
+        let currentQuestionIndex = 0;
+
+        async function init() {
+            try {
+                const response = await fetch('client/public/questions.json');
+                if (!response.ok) throw new Error('Failed to load questions');
+                questions = await response.json();
+                
+                const saved = localStorage.getItem('mbti_answers');
+                if (saved) {
+                    answers = new Map(Object.entries(JSON.parse(saved)));
+                }
+
+                const savedApiKey = localStorage.getItem('mbti_api_key');
+                if (savedApiKey) document.getElementById('apiKey').value = savedApiKey;
+
+                renderScoreButtons();
+                renderQuickNav();
+                showQuestion(0);
+            } catch (error) {
+                console.error('初始化失败:', error);
+                alert('加载题库失败，请检查 questions.json 文件');
+            }
+        }
+
+        function renderScoreButtons() {
+            const container = document.getElementById('scoreButtons');
+            container.innerHTML = '';
+            SCORE_LABELS.forEach(label => {
+                const btn = document.createElement('button');
+                btn.className = 'score-btn';
+                btn.innerHTML = `<span class="score-value">${label.value > 0 ? '+' : ''}${label.value}</span><span class="score-label-text">${label.label}</span>`;
+                btn.onclick = () => selectScore(label.value);
+                container.appendChild(btn);
+            });
+        }
+
+        function renderQuickNav() {
+            const container = document.getElementById('quickNavGrid');
+            container.innerHTML = '';
+            for (let i = 0; i < questions.length; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'quick-nav-btn';
+                btn.textContent = i + 1;
+                if (answers.has(questions[i].id)) btn.classList.add('answered');
+                btn.onclick = () => showQuestion(i);
+                container.appendChild(btn);
+            }
+        }
+
+        function showQuestion(index) {
+            currentQuestionIndex = index;
+            const question = questions[index];
+            
+            document.getElementById('dimensionBadge').textContent = DIMENSION_NAMES[question.dimension];
+            document.getElementById('questionNumber').textContent = `${index + 1}/${questions.length}`;
+            document.getElementById('questionText').textContent = question.open_ended;
+            document.getElementById('originalText').textContent = `原题：${question.original_text}`;
+
+            const answer = answers.get(question.id);
+            document.getElementById('answerText').value = answer?.text || '';
+            document.getElementById('charCount').textContent = answer?.text?.length || 0;
+
+            document.querySelectorAll('.score-btn').forEach((btn, idx) => {
+                btn.classList.remove('selected');
+                if (SCORE_LABELS[idx].value === answer?.score) {
+                    btn.classList.add('selected');
+                }
+            });
+
+            document.querySelectorAll('.quick-nav-btn').forEach((btn, idx) => {
+                btn.classList.remove('current');
+                if (idx === index) btn.classList.add('current');
+            });
+
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === questions.length - 1;
+
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+
+        function selectScore(score) {
+            const question = questions[currentQuestionIndex];
+            const answer = answers.get(question.id) || {};
+            answers.set(question.id, {
+                ...answer,
+                questionId: question.id,
+                score
+            });
+            saveAnswers();
+            showQuestion(currentQuestionIndex);
+        }
+
+        document.addEventListener('input', (e) => {
+            if (e.target.id === 'answerText') {
+                const question = questions[currentQuestionIndex];
+                const answer = answers.get(question.id) || {};
+                answers.set(question.id, {
+                    ...answer,
+                    questionId: question.id,
+                    text: e.target.value
+                });
+                document.getElementById('charCount').textContent = e.target.value.length;
+                saveAnswers();
+            }
+        });
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                showQuestion(currentQuestionIndex + 1);
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                showQuestion(currentQuestionIndex - 1);
+            }
+        }
+
+        function updateProgress() {
+            const answered = answers.size;
+            const total = questions.length;
+            const percent = Math.round((answered / total) * 100);
+            document.getElementById('progressText').textContent = `${answered}/${total} (${percent}%)`;
+            document.getElementById('progressFill').style.width = `${percent}%`;
+        }
+
+        function saveAnswers() {
+            const data = {};
+            answers.forEach((value, key) => {
+                data[key] = value;
+            });
+            localStorage.setItem('mbti_answers', JSON.stringify(data));
+            updateProgress();
+        }
+
+        function saveProgress() {
+            const apiKey = document.getElementById('apiKey').value;
+            if (apiKey) {
+                localStorage.setItem('mbti_api_key', apiKey);
+            }
+            alert('进度已保存');
+        }
+
+        async function analyzeAnswers() {
+            const apiKey = document.getElementById('apiKey').value;
+            const apiUrl = document.getElementById('apiUrl').value;
+            const modelName = document.getElementById('modelName').value;
+
+            if (!apiKey) {
+                alert('请输入 API Key');
+                return;
+            }
+
+            if (answers.size < questions.length) {
+                alert(`请完成所有 ${questions.length} 道题目`);
+                return;
+            }
+
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            analyzeBtn.disabled = true;
+            analyzeBtn.innerHTML = '<span class="spinner"></span> 分析中...';
+
+            try {
+                const scores = { EI: [], SN: [], TF: [], JP: [] };
+                answers.forEach(answer => {
+                    const question = questions.find(q => q.id === answer.questionId);
+                    if (question) {
+                        scores[question.dimension].push(answer.score);
+                    }
+                });
+
+                const dimensionAverages = {};
+                Object.keys(scores).forEach(dim => {
+                    const values = scores[dim];
+                    dimensionAverages[dim] = values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+                });
+
+                const summary = Array.from(answers.values())
+                    .slice(0, 10)
+                    .map(a => `Q: ${a.questionId}, Score: ${a.score}, Answer: ${a.text.substring(0, 50)}...`)
+                    .join('\n');
+
+                const response = await fetch(`${apiUrl}/v1/chat/completions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: modelName,
+                        messages: [{
+                            role: 'user',
+                            content: `你是一位 MBTI 专业分析师。基于以下用户的测试答案分析，生成一份 MBTI 性格分析报告。
+
+维度平均分：
+- EI 维度（外向/内向）: ${dimensionAverages.EI.toFixed(2)}
+- SN 维度（实感/直觉）: ${dimensionAverages.SN.toFixed(2)}
+- TF 维度（思考/情感）: ${dimensionAverages.TF.toFixed(2)}
+- JP 维度（判断/感知）: ${dimensionAverages.JP.toFixed(2)}
+
+用户答案摘要：
+${summary}
+
+请生成一份详细的 MBTI 性格分析报告，包括：
+1. 整体性格特征描述
+2. 各维度的具体分析
+3. 性格优势和可能的盲点
+4. 给用户的建议
+
+请用 JSON 格式输出，包含以下字段：
+{
+  "personality_type": "MBTI 类型（如 INTJ）",
+  "personality_summary": "整体性格特征描述",
+  "dimension_analysis": {
+    "EI": "外向/内向维度分析",
+    "SN": "实感/直觉维度分析",
+    "TF": "思考/情感维度分析",
+    "JP": "判断/感知维度分析"
+  },
+  "strengths": ["优势1", "优势2", "优势3"],
+  "blind_spots": ["盲点1", "盲点2"],
+  "recommendations": "给用户的建议"
+}`
+                        }],
+                        temperature: 0.3
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API 错误: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const content = data.choices[0].message.content;
+
+                let analysisResult;
+                try {
+                    const jsonMatch = content.match(/\{[\s\S]*\}/);
+                    if (jsonMatch) {
+                        analysisResult = JSON.parse(jsonMatch[0]);
+                    } else {
+                        analysisResult = { raw_analysis: content };
+                    }
+                } catch (e) {
+                    analysisResult = { raw_analysis: content };
+                }
+
+                showResult(dimensionAverages, analysisResult);
+            } catch (error) {
+                alert(`分析失败: ${error.message}`);
+            } finally {
+                analyzeBtn.disabled = false;
+                analyzeBtn.innerHTML = '🧠 分析结果';
+            }
+        }
+
+        function showResult(scores, analysis) {
+            let html = '';
+
+            html += '<div class="dimension-scores">';
+            Object.entries(scores).forEach(([dim, score]) => {
+                html += `
+                    <div class="score-card">
+                        <div class="score-card-label">${DIMENSION_NAMES[dim]}</div>
+                        <div class="score-card-value">${score.toFixed(2)}</div>
+                        <div class="score-card-hint">${score > 0 ? '倾向右侧' : score < 0 ? '倾向左侧' : '中立'}</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+
+            if (analysis) {
+                html += '<div class="analysis-content">';
+
+                if (analysis.personality_type) {
+                    html += `
+                        <div class="highlight-box">
+                            <h3>你的 MBTI 类型</h3>
+                            <p style="font-size: 24px; font-weight: bold; color: #1e40af;">${analysis.personality_type}</p>
+                        </div>
+                    `;
+                }
+
+                if (analysis.personality_summary) {
+                    html += `
+                        <div class="analysis-section">
+                            <h3>性格特征</h3>
+                            <p class="analysis-text">${analysis.personality_summary}</p>
+                        </div>
+                    `;
+                }
+
+                if (analysis.dimension_analysis) {
+                    html += '<div class="analysis-section"><h3>维度分析</h3><div class="dimension-grid">';
+                    Object.entries(analysis.dimension_analysis).forEach(([dim, text]) => {
+                        html += `
+                            <div class="dimension-item">
+                                <div class="dimension-item-title">${DIMENSION_NAMES[dim]}</div>
+                                <div class="dimension-item-text">${text}</div>
+                            </div>
+                        `;
+                    });
+                    html += '</div></div>';
+                }
+
+                if (analysis.strengths && analysis.strengths.length > 0) {
+                    html += '<div class="analysis-section"><h3>性格优势</h3><ul class="analysis-list">';
+                    analysis.strengths.forEach(strength => {
+                        html += `<li>${strength}</li>`;
+                    });
+                    html += '</ul></div>';
+                }
+
+                if (analysis.recommendations) {
+                    html += `
+                        <div class="highlight-box">
+                            <h3>建议</h3>
+                            <p>${analysis.recommendations}</p>
+                        </div>
+                    `;
+                }
+
+                if (analysis.raw_analysis) {
+                    html += `
+                        <div class="analysis-section">
+                            <h3>详细分析</h3>
+                            <p class="analysis-text" style="white-space: pre-wrap;">${analysis.raw_analysis}</p>
+                        </div>
+                    `;
+                }
+
+                html += '</div>';
+            }
+
+            html += '<button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="backToQuestions()">返回答题</button>';
+
+            document.getElementById('resultContent').innerHTML = html;
+            document.getElementById('questionSection').classList.add('hidden');
+            document.querySelectorAll('.card')[1].classList.add('hidden');
+            document.querySelectorAll('.card')[2].classList.add('hidden');
+            document.getElementById('resultSection').classList.add('show');
+            window.scrollTo(0, 0);
+        }
+
+        function backToQuestions() {
+            document.getElementById('questionSection').classList.remove('hidden');
+            document.querySelectorAll('.card')[1].classList.remove('hidden');
+            document.querySelectorAll('.card')[2].classList.remove('hidden');
+            document.getElementById('resultSection').classList.remove('show');
+            showQuestion(currentQuestionIndex);
+        }
+
+        function clearAll() {
+            if (confirm('确定要清空所有答案吗？')) {
+                answers.clear();
+                localStorage.removeItem('mbti_answers');
+                currentQuestionIndex = 0;
+                showQuestion(0);
+                backToQuestions();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
