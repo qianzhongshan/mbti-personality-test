@@ -1,0 +1,653 @@
+[
+  {
+    "id": "EI_001",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "当你要外出一整天，你会：A.计划你要做什么和在什么时候做 B.说去就去",
+    "open_ended": "请描述你在外出一整天时的典型行为模式。你会提前规划行程细节，还是更倾向于即兴决定？这种方式如何影响你的能量水平？请举例说明。"
+  },
+  {
+    "id": "EI_002",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "你认为自己是一个：A.较为随兴所至的人 B.较为有条理的人",
+    "open_ended": "请描述你在日常安排和社交活动中的组织方式。当计划被打乱时，你通常作何反应？请分享一个具体例子说明你如何平衡计划性与灵活性。"
+  },
+  {
+    "id": "EI_003",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "参加聚会时，你通常是那个主动与人交谈的人，还是更愿意待在角落？",
+    "open_ended": "请描述你在社交场合中的典型表现。你是主动发起交流的人，还是更倾向于等待别人来找你？你从中获得能量还是消耗能量？请举例说明。"
+  },
+  {
+    "id": "EI_004",
+    "dimension": "EI",
+    "sub_aspect": "thinking_process",
+    "original_text": "你更愿意通过与人讨论来理清思路，还是通过独自思考？",
+    "open_ended": "当你面对一个复杂问题需要理清思路时，你通常怎么做？是找人讨论，还是独自思考？请描述一个最近的例子。"
+  },
+  {
+    "id": "EI_005",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "当你需要放松时，你更愿意：A.和朋友一起活动 B.独自一人待着",
+    "open_ended": "请描述你典型的一天如何安排。你更倾向于社交互动，还是需要独处时间来恢复精力？请举例说明这种偏好如何影响你的生活。"
+  },
+  {
+    "id": "EI_006",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在团队工作中，你通常：A.积极发言并主导讨论 B.更多倾听和观察",
+    "open_ended": "请描述你在团队或小组项目中的典型角色。你是主动表达观点并引导讨论，还是更倾向于观察和倾听？请分享一个具体的团队经历。"
+  },
+  {
+    "id": "EI_007",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更喜欢：A.热闹的氛围 B.安静的环境",
+    "open_ended": "请描述你理想的工作或学习环境。你更倾向于热闹开放的场所，还是安静私密的角落？这种偏好如何影响你的工作效率和状态？"
+  },
+  {
+    "id": "EI_008",
+    "dimension": "EI",
+    "sub_aspect": "thinking_process",
+    "original_text": "当遇到问题时，你更倾向于：A.立即向他人求助 B.先自己尝试解决",
+    "open_ended": "请描述你面对新问题或挑战时的第一反应。你倾向于寻求他人协助，还是优先尝试独立解决？请举例说明你的决策过程。"
+  },
+  {
+    "id": "EI_009",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在社交场合中，你更愿意：A.认识新朋友 B.和熟人相处",
+    "open_ended": "请描述你在社交场合中的行为偏好。你会主动结识新朋友，还是更愿意与熟悉的人深入交流？请分享一次相关的经历。"
+  },
+  {
+    "id": "EI_010",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更习惯：A.多任务并行处理 B.一次专注一件事",
+    "open_ended": "请描述你的工作或学习习惯。你喜欢同时处理多项任务，还是一次专注完成一件事？请举例说明这种方式的效果。"
+  },
+  {
+    "id": "EI_011",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在会议或讨论中，你通常：A.积极发言 B.更多倾听",
+    "open_ended": "请描述你在会议或讨论中的参与方式。你会主动表达观点，还是更倾向于倾听和吸收他人意见？请分析这种倾向的利弊。"
+  },
+  {
+    "id": "EI_012",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更喜欢：A.公开演讲或表演 B.在幕后支持",
+    "open_ended": "请描述你在公开场合的表现。你更享受在台前展示，还是更愿意在幕后工作？请分享一次相关的经历。"
+  },
+  {
+    "id": "EI_013",
+    "dimension": "EI",
+    "sub_aspect": "thinking_process",
+    "original_text": "当你需要做决定时，你更倾向于：A.与朋友讨论 B.独自思考",
+    "open_ended": "请描述一个你做重要决定的过程。你倾向于与他人讨论收集意见，还是独自思考后决定？请说明这种方式的原因。"
+  },
+  {
+    "id": "EI_014",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在陌生环境中，你通常：A.主动与人交流 B.保持安静观察",
+    "open_ended": "请描述你进入陌生环境（如新公司、新学校）时的行为模式。你会主动社交，还是先观察环境？请分享一次适应新环境的经历。"
+  },
+  {
+    "id": "EI_015",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更喜欢：A.团队合作 B.独立工作",
+    "open_ended": "请描述你偏好的工作方式。你更享受团队协作的氛围，还是独立自主的工作节奏？请分析这种偏好的原因和影响。"
+  },
+  {
+    "id": "EI_016",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在社交中，你更愿意：A.成为关注的焦点 B.作为参与者",
+    "open_ended": "请描述你在社交活动中的角色偏好。你喜欢成为焦点人物，还是更愿意作为普通参与者？请分享一次相关的经历。"
+  },
+  {
+    "id": "EI_017",
+    "dimension": "EI",
+    "sub_aspect": "thinking_process",
+    "original_text": "当需要创意时，你更倾向于：A.与他人头脑风暴 B.独自沉思",
+    "open_ended": "请描述你获取创意的方式。你喜欢通过讨论激发灵感，还是独自思考产生想法？请举例说明这种方法的效果。"
+  },
+  {
+    "id": "EI_018",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "周末时，你更倾向于：A.外出活动 B.在家休息",
+    "open_ended": "请描述你理想的周末安排。你更喜欢外出社交和活动，还是在家独处和休息？请说明这种偏好如何影响你的能量恢复。"
+  },
+  {
+    "id": "EI_019",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在团队中，你更愿意：A.领导团队 B.跟随团队",
+    "open_ended": "请描述你在团队中的角色偏好。你喜欢担任领导职务，还是更愿意作为团队成员？请分析这种倾向的原因。"
+  },
+  {
+    "id": "EI_020",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更喜欢：A.面对面交流 B.文字沟通",
+    "open_ended": "请描述你偏好的沟通方式。你喜欢面对面交流，还是更习惯通过文字（邮件、消息）沟通？请分析各自的优缺点。"
+  },
+  {
+    "id": "EI_021",
+    "dimension": "EI",
+    "sub_aspect": "social_interaction",
+    "original_text": "在聚会中，你更倾向于：A.与多人交流 B.与少数人深入对话",
+    "open_ended": "请描述你在聚会中的社交模式。你更喜欢与多人互动，还是与少数人进行深入对话？请分享一次相关的经历。"
+  },
+  {
+    "id": "EI_022",
+    "dimension": "EI",
+    "sub_aspect": "thinking_process",
+    "original_text": "当你需要学习新技能时，你更倾向于：A.参加培训班 B.自学",
+    "open_ended": "请描述你的学习风格偏好。你喜欢通过课程或培训学习，还是倾向于自学探索？请举例说明。"
+  },
+  {
+    "id": "EI_023",
+    "dimension": "EI",
+    "sub_aspect": "social_energy",
+    "original_text": "你更喜欢：A.热闹的假期 B.安静的假期",
+    "open_ended": "请描述你理想假期的样子。你喜欢热闹丰富的行程，还是安静悠闲的时光？请说明这种偏好如何帮助你放松。"
+  },
+  {
+    "id": "SN_001",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "假如你是一位老师，你会选教：A.以事实为主的课程 B.涉及理论的课程",
+    "open_ended": "请描述你偏好的学习或教学方式。你更关注具体案例和实用技能，还是理论框架和抽象概念？请举例说明你最近一次学习新事物的经历。"
+  },
+  {
+    "id": "SN_002",
+    "dimension": "SN",
+    "sub_aspect": "social_preference",
+    "original_text": "你通常：A.与人容易混熟 B.比较沉静或矜持",
+    "open_ended": "请描述你与陌生人建立关系的过程。你倾向于快速熟悉新环境和新朋友，还是需要较长时间观察和适应？请分享一次你认识新朋友的具体经历。"
+  },
+  {
+    "id": "SN_003",
+    "dimension": "SN",
+    "sub_aspect": "focus_attention",
+    "original_text": "你更关注：A.当前的现实 B.未来的可能性",
+    "open_ended": "请描述你的思维习惯。你更多关注当下现实和具体细节，还是倾向于思考未来可能性？请举例说明这种注意力方向如何影响你的决策。"
+  },
+  {
+    "id": "SN_004",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "在阅读时，你更注重：A.具体细节 B.整体框架",
+    "open_ended": "请描述你的阅读或信息获取习惯。你会仔细关注具体细节和数据，还是先把握整体框架和主题？请分享一次相关的经历。"
+  },
+  {
+    "id": "SN_005",
+    "dimension": "SN",
+    "sub_aspect": "learning_style",
+    "original_text": "你更喜欢：A.逐步学习 B.整体理解",
+    "open_ended": "请描述你的学习方式。你喜欢按部就班逐步学习，还是先理解整体再深入细节？请举例说明哪种方式更有效。"
+  },
+  {
+    "id": "SN_006",
+    "dimension": "SN",
+    "sub_aspect": "problem_solving",
+    "original_text": "解决问题时，你更依赖：A.过往经验 B.创新方法",
+    "open_ended": "请描述你解决新问题的方式。你倾向于参考过往类似经验，还是尝试创新方法？请分享一次解决问题的具体过程。"
+  },
+  {
+    "id": "SN_007",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "你更相信：A.可验证的事实 B.直觉和灵感",
+    "open_ended": "请描述你做判断时的依据。你更依赖可验证的事实和数据，还是信任直觉和灵感？请分享一次相关的决策经历。"
+  },
+  {
+    "id": "SN_008",
+    "dimension": "SN",
+    "sub_aspect": "communication_style",
+    "original_text": "沟通时，你更倾向于：A.具体描述 B.比喻和象征",
+    "open_ended": "请描述你的沟通风格。你喜欢用具体事实和细节说明问题，还是倾向使用比喻和象征？请举例说明。"
+  },
+  {
+    "id": "SN_009",
+    "dimension": "SN",
+    "sub_aspect": "focus_attention",
+    "original_text": "你更关注：A.事物的现状 B.事物的发展趋势",
+    "open_ended": "请描述你的观察视角。你更多关注事物当前的状态，还是思考未来的发展趋势？请分享一次相关的观察经历。"
+  },
+  {
+    "id": "SN_010",
+    "dimension": "SN",
+    "sub_aspect": "learning_style",
+    "original_text": "学习新概念时，你更喜欢：A.从实例入手 B.从理论开始",
+    "open_ended": "请描述你学习新概念的方式。你喜欢通过具体实例理解，还是先掌握理论框架？请举例说明。"
+  },
+  {
+    "id": "SN_011",
+    "dimension": "SN",
+    "sub_aspect": "problem_solving",
+    "original_text": "面对复杂问题，你更倾向于：A.分解成小问题 B.寻找整体方案",
+    "open_ended": "请描述你处理复杂问题的策略。你会将问题分解逐步解决，还是寻求整体性解决方案？请分享一次解决问题的经历。"
+  },
+  {
+    "id": "SN_012",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "你更注重：A.实用性 B.创新性",
+    "open_ended": "请描述你在工作或学习中更看重的特质。你更重视实用性和可行性，还是创新性和独特性？请分析这种偏好的原因。"
+  },
+  {
+    "id": "SN_013",
+    "dimension": "SN",
+    "sub_aspect": "communication_style",
+    "original_text": "表达想法时，你更倾向于：A.精确描述 B.形象表达",
+    "open_ended": "请描述你的表达方式。你喜欢用精确的语言描述细节，还是用形象的方式传达概念？请举例说明。"
+  },
+  {
+    "id": "SN_014",
+    "dimension": "SN",
+    "sub_aspect": "focus_attention",
+    "original_text": "你更关注：A.具体步骤 B.最终目标",
+    "open_ended": "请描述你执行任务时的关注点。你更关注具体的执行步骤，还是专注于最终目标？请分享一次相关经历。"
+  },
+  {
+    "id": "SN_015",
+    "dimension": "SN",
+    "sub_aspect": "learning_style",
+    "original_text": "你喜欢：A.动手实践 B.理论思考",
+    "open_ended": "请描述你偏好的学习方式。你喜欢通过动手实践学习，还是通过理论思考理解？请举例说明。"
+  },
+  {
+    "id": "SN_016",
+    "dimension": "SN",
+    "sub_aspect": "problem_solving",
+    "original_text": "面对挑战时，你更倾向于：A.基于事实分析 B.基于直觉判断",
+    "open_ended": "请描述你面对挑战时的决策方式。你会基于事实和数据分析，还是依靠直觉和判断？请分享一次相关经历。"
+  },
+  {
+    "id": "SN_017",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "你更关注：A.事物的现象 B.事物的本质",
+    "open_ended": "请描述你的思维深度。你更多关注事物的表面现象，还是探究其本质和原理？请分享一次深入思考的经历。"
+  },
+  {
+    "id": "SN_018",
+    "dimension": "SN",
+    "sub_aspect": "communication_style",
+    "original_text": "沟通时，你更喜欢：A.事实依据 B.情感共鸣",
+    "open_ended": "请描述你的沟通偏好。你更喜欢用事实和数据说服他人，还是通过情感共鸣达成共识？请举例说明。"
+  },
+  {
+    "id": "SN_019",
+    "dimension": "SN",
+    "sub_aspect": "focus_attention",
+    "original_text": "你更关注：A.现在 B.未来",
+    "open_ended": "请描述你的时间关注点。你更多关注当下的事务，还是思考未来的规划？请分析这种偏好的影响。"
+  },
+  {
+    "id": "SN_020",
+    "dimension": "SN",
+    "sub_aspect": "learning_style",
+    "original_text": "你更喜欢：A.系统性学习 B.探索性学习",
+    "open_ended": "请描述你的学习风格。你喜欢按系统结构学习，还是通过探索发现学习？请举例说明。"
+  },
+  {
+    "id": "SN_021",
+    "dimension": "SN",
+    "sub_aspect": "problem_solving",
+    "original_text": "遇到问题时，你更倾向于：A.参考标准方案 B.寻找创新方案",
+    "open_ended": "请描述你解决问题的风格。你会参考已有的标准方案，还是尝试寻找创新方案？请分享一次相关经历。"
+  },
+  {
+    "id": "SN_022",
+    "dimension": "SN",
+    "sub_aspect": "information_processing",
+    "original_text": "你更注重：A.细节 B.整体",
+    "open_ended": "请描述你处理信息的方式。你会仔细关注每个细节，还是先把握整体轮廓？请举例说明。"
+  },
+  {
+    "id": "SN_023",
+    "dimension": "SN",
+    "sub_aspect": "communication_style",
+    "original_text": "表达时，你更喜欢：A.直接陈述 B.委婉暗示",
+    "open_ended": "请描述你的表达风格。你喜欢直接明确地表达观点，还是倾向委婉暗示？请分析这种方式的利弊。"
+  },
+  {
+    "id": "SN_024",
+    "dimension": "SN",
+    "sub_aspect": "focus_attention",
+    "original_text": "你更关注：A.已知信息 B.未知可能",
+    "open_ended": "请描述你的探索倾向。你更多关注已知的信息，还是对未知的可能性更感兴趣？请分享一次探索新事物的经历。"
+  },
+  {
+    "id": "SN_025",
+    "dimension": "SN",
+    "sub_aspect": "learning_style",
+    "original_text": "你喜欢：A.循序渐进 B.跳跃学习",
+    "open_ended": "请描述你的学习节奏。你喜欢按部就班循序渐进，还是可以跳跃式学习？请举例说明。"
+  },
+  {
+    "id": "SN_026",
+    "dimension": "SN",
+    "sub_aspect": "problem_solving",
+    "original_text": "做决定时，你更依赖：A.具体数据 B.整体感受",
+    "open_ended": "请描述你的决策依据。你更依赖具体的数据和分析，还是基于整体感受？请分享一次决策经历。"
+  },
+  {
+    "id": "TF_001",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "你是否经常让：A.你的情感支配你的理智 B.你的理智主宰你的情感",
+    "open_ended": "请描述一个你需要做重要决定的场景。你当时如何权衡逻辑分析与情感因素？最终是什么促使你做出选择？请具体说明决策过程中的关键考量。"
+  },
+  {
+    "id": "TF_002",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为更重要的是：A.公平 B.和谐",
+    "open_ended": "请描述你在团队或人际关系中的处理方式。当需要做出选择时，你更看重公平公正，还是维护和谐？请分享一次相关的经历。"
+  },
+  {
+    "id": "TF_003",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "在做决定时，你更关注：A.逻辑和事实 B.价值观和感受",
+    "open_ended": "请描述你的决策风格。在做重要决定时，你更注重逻辑分析和事实依据，还是个人价值观和感受？请举例说明。"
+  },
+  {
+    "id": "TF_004",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.真相更重要 B.和谐更重要",
+    "open_ended": "请描述一个需要表达真相但可能影响和谐的场景。你会如何选择？请分析这种选择背后的价值观。"
+  },
+  {
+    "id": "TF_005",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "处理问题时，你更倾向于：A.客观分析 B.理解感受",
+    "open_ended": "请描述你处理问题的方式。你会优先进行客观分析，还是先理解他人的感受？请分享一次处理问题的经历。"
+  },
+  {
+    "id": "TF_006",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.原则更重要 B.人情更重要",
+    "open_ended": "请描述你在原则和人情之间的平衡方式。当两者冲突时，你会如何选择？请分享一次相关的经历。"
+  },
+  {
+    "id": "TF_007",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "在争论中，你更关注：A.谁有理 B.谁需要支持",
+    "open_ended": "请描述你在争论或冲突中的反应。你更关注谁有道理，还是谁需要情感支持？请分享一次相关经历。"
+  },
+  {
+    "id": "TF_008",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.批评应该直接 B.批评应该委婉",
+    "open_ended": "请描述你给予反馈的方式。你会直接指出问题，还是委婉表达？请分析这种方式的效果。"
+  },
+  {
+    "id": "TF_009",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "做选择时，你更依赖：A.利弊分析 B.直觉感受",
+    "open_ended": "请描述你的选择方式。你会进行详细的利弊分析，还是依赖直觉感受？请分享一次重要选择的经历。"
+  },
+  {
+    "id": "TF_010",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.规则应该严格遵守 B.规则可以灵活处理",
+    "open_ended": "请描述你对规则的看法。你会严格遵守规则，还是根据情况灵活处理？请分享一次相关经历。"
+  },
+  {
+    "id": "TF_011",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "面对冲突，你更倾向于：A.理性解决 B.情感协调",
+    "open_ended": "请描述你处理冲突的方式。你会优先理性分析解决问题，还是通过情感协调化解？请分享一次处理冲突的经历。"
+  },
+  {
+    "id": "TF_012",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.效率更重要 B.感受更重要",
+    "open_ended": "请描述你在工作或生活中的优先级。你更看重效率和结果，还是关注他人的感受？请分析这种偏好的影响。"
+  },
+  {
+    "id": "TF_013",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "评价他人时，你更关注：A.能力表现 B.人格特质",
+    "open_ended": "请描述你评价他人的标准。你更关注能力和表现，还是人格特质？请分析这种评价方式的影响。"
+  },
+  {
+    "id": "TF_014",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.客观标准更重要 B.主观感受更重要",
+    "open_ended": "请描述你判断事物的依据。你更依赖客观标准，还是主观感受？请分享一次相关的判断经历。"
+  },
+  {
+    "id": "TF_015",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "处理人际关系时，你更注重：A.公平公正 B.情感关怀",
+    "open_ended": "请描述你处理人际关系的方式。你更注重公平公正，还是情感关怀？请分享一次相关经历。"
+  },
+  {
+    "id": "TF_016",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.对错分明 B.可以理解灰色地带",
+    "open_ended": "请描述你对对错的看法。你认为事情应该对错分明，还是可以理解灰色地带？请分享一次相关思考。"
+  },
+  {
+    "id": "TF_017",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "做决定时，你更考虑：A.长远利益 B.当下感受",
+    "open_ended": "请描述你的决策视角。你会更考虑长远利益，还是当下的感受？请分享一次重要决策的经历。"
+  },
+  {
+    "id": "TF_018",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.应该坚持原则 B.可以灵活变通",
+    "open_ended": "请描述你在原则问题上的立场。你会坚持原则，还是根据情况灵活变通？请分析这种方式的利弊。"
+  },
+  {
+    "id": "TF_019",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "面对问题时，你更：A.冷静分析 B.共情理解",
+    "open_ended": "请描述你面对问题时的反应。你会保持冷静分析，还是先共情理解？请分享一次相关经历。"
+  },
+  {
+    "id": "TF_020",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.逻辑比情感重要 B.情感比逻辑重要",
+    "open_ended": "请描述你对逻辑和情感的看法。你认为哪个更重要？请分享一次相关思考或经历。"
+  },
+  {
+    "id": "TF_021",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "处理矛盾时，你更：A.理性解决 B.情感化解",
+    "open_ended": "请描述你处理矛盾的方式。你会通过理性分析解决，还是通过情感方式化解？请分享一次经历。"
+  },
+  {
+    "id": "TF_022",
+    "dimension": "TF",
+    "sub_aspect": "values",
+    "original_text": "你认为：A.应该讲道理 B.应该讲感情",
+    "open_ended": "请描述你在沟通中的偏好。你会更注重讲道理，还是讲感情？请分析这种方式的效果。"
+  },
+  {
+    "id": "TF_023",
+    "dimension": "TF",
+    "sub_aspect": "decision_making",
+    "original_text": "做选择时，你更关注：A.利弊得失 B.是否正确",
+    "open_ended": "请描述你的选择标准。你会更关注利弊得失，还是事情是否正确？请分享一次重要选择的经历。"
+  },
+  {
+    "id": "JP_001",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "你更喜欢：A.提前计划 B.随兴而为",
+    "open_ended": "请描述你处理日常事务的方式。你喜欢提前规划好一切，还是更倾向于随性而为？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_002",
+    "dimension": "JP",
+    "sub_aspect": "work_style",
+    "original_text": "在工作中，你更倾向于：A.按计划执行 B.灵活应对",
+    "open_ended": "请描述你的工作风格。你会严格按照计划执行，还是根据情况灵活应对？请分析这种方式的效果。"
+  },
+  {
+    "id": "JP_003",
+    "dimension": "JP",
+    "sub_aspect": "deadline_handling",
+    "original_text": "面对截止日期，你通常：A.提前完成 B.最后冲刺",
+    "open_ended": "请描述你处理任务和截止日期的习惯。你会提前完成，还是在截止日期前冲刺？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_004",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "你更喜欢：A.有序的环境 B.灵活的环境",
+    "open_ended": "请描述你偏好的生活或工作环境。你喜欢井然有序，还是灵活多变？请说明这种偏好如何影响你的效率。"
+  },
+  {
+    "id": "JP_005",
+    "dimension": "JP",
+    "sub_aspect": "decision_making",
+    "original_text": "做决定时，你更倾向于：A.快速决定 B.深思熟虑",
+    "open_ended": "请描述你的决策速度。你会快速做出决定，还是需要深思熟虑？请分析这种方式的影响。"
+  },
+  {
+    "id": "JP_006",
+    "dimension": "JP",
+    "sub_aspect": "work_style",
+    "original_text": "处理多个任务时，你更倾向于：A.按顺序完成 B.同时进行",
+    "open_ended": "请描述你处理多任务的方式。你会按顺序逐一完成，还是同时进行多项任务？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_007",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "你更喜欢：A.确定的安排 B.未知的可能性",
+    "open_ended": "请描述你对确定性和可能性的偏好。你喜欢有确定性的安排，还是对未知可能感到兴奋？请分析这种倾向。"
+  },
+  {
+    "id": "JP_008",
+    "dimension": "JP",
+    "sub_aspect": "deadline_handling",
+    "original_text": "面对新任务，你通常：A.立即开始 B.先规划再开始",
+    "open_ended": "请描述你开始新任务的方式。你会立即投入，还是先进行规划？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_009",
+    "dimension": "JP",
+    "sub_aspect": "decision_making",
+    "original_text": "在计划被打乱时，你通常：A.焦虑不安 B.灵活应对",
+    "open_ended": "请描述你对计划被打乱的反应。你会感到焦虑，还是能灵活应对？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_010",
+    "dimension": "JP",
+    "sub_aspect": "work_style",
+    "original_text": "你更喜欢：A.有明确目标 B.探索各种可能",
+    "open_ended": "请描述你做事的方式。你喜欢有明确的目标指引，还是享受探索各种可能？请举例说明。"
+  },
+  {
+    "id": "JP_011",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "在日常生活中，你更倾向于：A.有规律 B.灵活变化",
+    "open_ended": "请描述你的生活习惯。你喜欢有规律的生活，还是灵活多变的节奏？请说明这种偏好的影响。"
+  },
+  {
+    "id": "JP_012",
+    "dimension": "JP",
+    "sub_aspect": "deadline_handling",
+    "original_text": "面对截止日期，你通常：A.提前规划 B.灵活调整",
+    "open_ended": "请描述你应对截止日期的策略。你会提前规划，还是灵活调整？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_013",
+    "dimension": "JP",
+    "sub_aspect": "decision_making",
+    "original_text": "做选择时，你更倾向于：A.快速决策 B.收集更多信息",
+    "open_ended": "请描述你的选择方式。你会快速做出决策，还是收集更多信息后再决定？请分析这种方式的影响。"
+  },
+  {
+    "id": "JP_014",
+    "dimension": "JP",
+    "sub_aspect": "work_style",
+    "original_text": "处理项目时，你更倾向于：A.按计划推进 B.随时调整",
+    "open_ended": "请描述你管理项目的方式。你会按计划推进，还是根据进展随时调整？请分享一次项目经历。"
+  },
+  {
+    "id": "JP_015",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "你更喜欢：A.有明确的时间表 B.灵活安排时间",
+    "open_ended": "请描述你管理时间的方式。你喜欢有明确的时间表，还是灵活安排？请说明这种方式的效果。"
+  },
+  {
+    "id": "JP_016",
+    "dimension": "JP",
+    "sub_aspect": "deadline_handling",
+    "original_text": "面对突发任务，你通常：A.立即调整 B.保持原计划",
+    "open_ended": "请描述你应对突发任务的方式。你会立即调整计划，还是尽量保持原计划？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_017",
+    "dimension": "JP",
+    "sub_aspect": "decision_making",
+    "original_text": "在不确定的情况下，你更倾向于：A.快速行动 B.谨慎观察",
+    "open_ended": "请描述你在不确定情况下的反应。你会快速行动，还是谨慎观察？请分享一次相关经历。"
+  },
+  {
+    "id": "JP_018",
+    "dimension": "JP",
+    "sub_aspect": "work_style",
+    "original_text": "你更喜欢：A.完成一件事再开始下一件 B.多件事同时进行",
+    "open_ended": "请描述你的工作节奏。你会完成一件事再开始下一件，还是多件事同时进行？请分析这种方式的效果。"
+  },
+  {
+    "id": "JP_019",
+    "dimension": "JP",
+    "sub_aspect": "lifestyle",
+    "original_text": "在周末，你更倾向于：A.按计划活动 B.随心所欲",
+    "open_ended": "请描述你周末的安排方式。你会按计划活动，还是随心所欲？请说明这种偏好如何影响你的休息质量。"
+  },
+  {
+    "id": "JP_020",
+    "dimension": "JP",
+    "sub_aspect": "deadline_handling",
+    "original_text": "面对长期项目，你通常：A.分阶段完成 B.集中完成",
+    "open_ended": "请描述你处理长期项目的方式。你会分阶段完成，还是集中时间完成？请分享一次项目经历。"
+  },
+  {
+    "id": "JP_021",
+    "dimension": "JP",
+    "sub_aspect": "decision_making",
+    "original_text": "做决定后，你通常：A.立即行动 B.继续观察",
+    "open_ended": "请描述你做决定后的行为模式。你会立即行动，还是继续观察情况？请分析这种方式的影响。"
+  }
+]
